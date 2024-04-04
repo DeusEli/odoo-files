@@ -53,6 +53,14 @@ else
     exit 1
 fi
 
+# Instalar Nginx
+if sudo apt install -y nginx; then
+    echo "Nginx se ha instalado correctamente."
+else
+    echo "Hubo un problema durante la instalación de Nginx. Por favor, verifica y corrige los errores."
+    exit 1
+fi
+
 # Eliminar carpeta odoo
 if rm -rf odoo/; then
     echo "Se eliminó la carpeta Odoo"
