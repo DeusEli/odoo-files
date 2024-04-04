@@ -1,1 +1,18 @@
-
+version: '3.1'
+services:
+  db:
+    container_name: db
+    image: postgres:13
+    volumes:
+      - ./odoo-db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+    networks:
+      - odoo_net
+networks:
+  odoo_net:
+  
