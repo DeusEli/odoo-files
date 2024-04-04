@@ -1,7 +1,7 @@
 version: '3.1'
 services:
-  ${CUSTOMER}_odoo${ODOO_VERSION}:
-    container_name: ${CUSTOMER}_odoo${ODOO_VERSION}
+  ${CUSTOMER}_odoo${ODOO_VERSION}_${NAME}:
+    container_name: ${CUSTOMER}_odoo${ODOO_VERSION}_${NAME}
     image: odoo:${ODOO_VERSION}
     volumes:
       - ./${ODOO_VERSION}/custom:/mnt/extra-addons
